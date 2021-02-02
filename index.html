@@ -32,7 +32,8 @@
         .error {
             position: absolute;
             left: .5rem;
-            bottom: .5rem;
+            bottom: 0rem;
+            font-size: .75rem;
             color: #900;
         }
         .mlist-submit {
@@ -110,7 +111,7 @@
         function validateEmail() {
             var email = document.forms["mlist-form"]["mlist-email"].value;
             if(email = "") {
-                document.getElementsByClassName("error")[0].innerHTML = "El campo 'Correo electrónico' es obligatorio.;
+                document.getElementsByClassName("error")[0].innerHTML = "El campo 'Correo electrónico' es obligatorio.";
                 return false;
             }
             document.getElementsByClassName("error")[0].innerHTML = "Las direcciones de correo electrónico deben seguir el formato usuario@dominio.com.";
