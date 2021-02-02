@@ -124,6 +124,9 @@
             .terms {margin-top: .5rem}
         }
     </style -->
+	<style>
+		input::placeholder{color: #000}
+	</style>
 </head>
 <body>
     <form method="POST" name="mlist-form" class="mlist-form" target="_parent" enctype="multipart/form-data">
@@ -170,16 +173,15 @@
         // Give the parameter a variable name
         var dynamicContent = getParameterByName('src');
         
-		// Check if the URL parameter is bananas
-		if (dynamicContent == 'creators') {
-            document.getElementById("css").href = "/ala-mailing-list/assets/css/creators.css";
-			document.getElementById("ref").value = "alaCreators";
-            document.getElementsByClassName("mlist-submit")[0].style.fontWeight = "700";
-		} 
-		// Check if the URL parmeter is empty or not defined, display default content
-		else {
-			document.getElementById("ref").value = "alaBarca_standalone_website";
-		}
+	if (dynamicContent == 'creators') {
+		document.getElementById("css").href = "/ala-mailing-list/assets/css/creators.css";
+		document.getElementById("ref").value = "alaCreators";
+		document.getElementsByClassName("mlist-submit")[0].style.fontWeight = "700";
+		document.querySelector("body").style.fontFamily = "proxima-nova";
+	} 
+	else {
+		document.getElementById("ref").value = "alaBarca_standalone_website";
+	}
 	});
     </script>
 </body>
