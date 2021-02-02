@@ -95,6 +95,7 @@
         @media screen and (max-width: 599px) {
             .desktop {display: none}
             .phone {position: static}
+            .mlist-field {margin-bottom: 0}
         }
     </style>
 </head>
@@ -124,7 +125,7 @@
                 return false;
             }
             document.getElementsByClassName("error")[0].innerHTML = "Las direcciones de correo electrónico deben seguir el formato usuario@dominio.com.";
-            document.getElementsByClassName("error")[1].innerHTML = "El campo 'Correo electrónico' es obligatorio.";
+            document.getElementsByClassName("error")[1].innerHTML = "Las direcciones de correo electrónico deben seguir el formato usuario@dominio.com.";
             return false;
         }
     </script>
