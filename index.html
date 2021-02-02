@@ -110,7 +110,7 @@
         document.getElementById("mlist-email").oninvalid = function() {return validateEmail()}
         function validateEmail() {
             var email = document.forms["mlist-form"]["mlist-email"].value;
-            if(email = "") {
+            if(email == "") {
                 document.getElementsByClassName("error")[0].innerHTML = "El campo 'Correo electrónico' es obligatorio.";
                 return false;
             }
