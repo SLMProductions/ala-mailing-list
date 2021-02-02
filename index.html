@@ -65,6 +65,7 @@
             color: #000;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-weight: 700;
+            text-transform: uppercase;
             margin-right: .5rem;
         }
         .open-terms:before {
@@ -80,13 +81,20 @@
             transform: translateX(-50%)
         }
         .open-terms:after {
-            content: "TÉRMINOS";
+            content: "Términos";
         }
         .open-terms:hover:before {
             width: 100%;
         }
+        .showing:after {
+            content: "Mostrar Menos";
+        }
         .terms-wrapper {
             font-size: .75rem;
+            transition: .3s;
+        }
+        .showing + .terms-wrapper {
+            background: red;
         }
         @keyframes growUnderline {
             0% {width: 0}
@@ -132,6 +140,9 @@
             document.getElementsByClassName("error")[1].innerHTML = "Las direcciones de correo electrónico deben seguir el formato usuario@dominio.com.";
             return false;
         }
+        document.getElementsByClassName("open-terms")[0].addEventListener("click",function(){
+            document.getElementsByClassName("open-terms")[0].classList.toggle("showing");
+        })
     </script>
 </body>
 </html>
