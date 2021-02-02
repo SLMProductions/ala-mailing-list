@@ -89,6 +89,12 @@
             0% {width: 0}
             100% {width: 100%;}
         }
+        @media screen and (min-width: 600px) {
+            .phone {display: none}
+        }
+        @media screen and (max-width: 599px) {
+            .desktop {display: none}
+        }
     </style>
 </head>
 <body>
@@ -96,8 +102,9 @@
         <div class="mlist-field">
             <input type="email" name="mlist-email" id="mlist-email" class="mlist-email" placeholder="Correo Electronico" required>
             <input type="submit" value="ENVIAR" class="mlist-submit">
-            <label for="mlist-email" class="error"></label>
+            <label for="mlist-email" class="error desktop"></label>
         </div>
+        <label for="mlist-email" class="error phone"></label>
         <div class="terms">
             <a href="javascript:void(0)" class="open-terms"></a>
             <div class="terms-wrapper">
@@ -111,10 +118,10 @@
         function validateEmail() {
             var email = document.forms["mlist-form"]["mlist-email"].value;
             if(email == "") {
-                document.getElementsByClassName("error")[0].innerHTML = "El campo 'Correo electrónico' es obligatorio.";
+                document.getElementsByClassName("error").innerHTML = "El campo 'Correo electrónico' es obligatorio.";
                 return false;
             }
-            document.getElementsByClassName("error")[0].innerHTML = "Las direcciones de correo electrónico deben seguir el formato usuario@dominio.com.";
+            document.getElementsByClassName("error").innerHTML = "Las direcciones de correo electrónico deben seguir el formato usuario@dominio.com.";
             return false;
         }
     </script>
