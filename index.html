@@ -92,9 +92,11 @@
         .terms-wrapper {
             font-size: .75rem;
             transition: .3s;
+            height: 0;
+            overflow: hidden;
         }
         .showing + .terms-wrapper {
-            background: red;
+            height: 120px;
         }
         @keyframes growUnderline {
             0% {width: 0}
@@ -122,7 +124,7 @@
         <div class="terms">
             <a href="javascript:void(0)" class="open-terms"></a>
             <div class="terms-wrapper">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus ullam, ad eveniet delectus ducimus dolor. Natus necessitatibus dolore autem ratione?
+                Al enviar mi información, acepto recibir actualizaciones personalizadas y mensajes por correo electrónico sobre La Blanquita basados en mi información y de acuerdo con la política de privacidad. Asimismo, entiendo que puedo dejar de recibir mensajes en cualquier momento enviando un correo electrónico a <a href="mailto: newsletter@alabarcadesign.com">newsletter@alabarcadesign.com</a>, o haciendo clic en el pie de cualquier mensaje que reciba del newsletter.
             </div>
         </div>
         <input type="hidden" name="ref" value="alaBarca_standalone_website">
