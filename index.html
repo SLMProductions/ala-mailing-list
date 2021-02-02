@@ -118,10 +118,12 @@
         function validateEmail() {
             var email = document.forms["mlist-form"]["mlist-email"].value;
             if(email == "") {
-                document.getElementsByClassName("error").innerHTML = "El campo 'Correo electrónico' es obligatorio.";
+                document.getElementsByClassName("error")[0].innerHTML = "El campo 'Correo electrónico' es obligatorio.";
+                document.getElementsByClassName("error")[1].innerHTML = "El campo 'Correo electrónico' es obligatorio.";
                 return false;
             }
             document.getElementsByClassName("error").innerHTML = "Las direcciones de correo electrónico deben seguir el formato usuario@dominio.com.";
+            document.getElementsByClassName("error")[1].innerHTML = "El campo 'Correo electrónico' es obligatorio.";
             return false;
         }
     </script>
