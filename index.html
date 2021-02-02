@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ala Barca/Creators Mailing list form</title>
     <link rel="stylesheet" href="https://slmproductions.github.io/form-builder/tarjetasyocasiones/css/garde.css">
+    <link rel="stylesheet" href="https://slmproductions.github.io/ala-mailing-list/assets/css/proxima-nova.css">
     <link rel="stylesheet" href="/ala-mailing-list/assets/css/standalone.css" id="css">
     <!-- style>
         * {box-sizing: border-box;}
@@ -138,7 +139,7 @@
                 Al enviar mi información, acepto recibir actualizaciones personalizadas y mensajes por correo electrónico sobre La Blanquita basados en mi información y de acuerdo con la política de privacidad. Asimismo, entiendo que puedo dejar de recibir mensajes en cualquier momento enviando un correo electrónico a <a href="mailto: newsletter@alabarcadesign.com">newsletter@alabarcadesign.com</a>, o haciendo clic en el pie de cualquier mensaje que reciba del newsletter.
             </div>
         </div>
-        <input type="hidden" name="ref" value="alaBarca_standalone_website">
+        <input type="hidden" name="ref" value="alaBarca_standalone_website" id="ref">
     </form>
     <script>
         document.getElementById("mlist-email").oninvalid = function() {return validateEmail()}
@@ -156,6 +157,30 @@
         document.getElementsByClassName("open-terms")[0].addEventListener("click",function(){
             document.getElementsByClassName("open-terms")[0].classList.toggle("showing");
         })
+        
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+	    }
+        // Give the parameter a variable name
+        var dynamicContent = getParameterByName('src');
+        
+		// Check if the URL parameter is bananas
+		if (dynamicContent == 'creators') {
+            document.getElementById("css").href = "/ala-mailing-list/assets/css/creators.css";
+			document.getElementById("ref").value = "alaCreators";
+            document.getElementsByClassName("mlist-submit")[0].style.fontWeight = "700";
+		} 
+		// Check if the URL parmeter is empty or not defined, display default content
+		else {
+			document.getElementById("ref").value = "alaBarca_standalone_website";
+		}
+	});
     </script>
 </body>
 </html>
